@@ -67,7 +67,7 @@ public class Read_Number {
             case 2 -> "two hundred ";
             case 1 -> "one hundred ";
             case 0 -> " ";
-            default -> "false";
+            default -> "";
         };
     }
     public static String ten(int tensNumLength) {
@@ -80,7 +80,7 @@ public class Read_Number {
             case 4 -> "forty ";
             case 3 -> "thirty ";
             case 2 -> "twenty ";
-            default -> "false";
+            default -> "";
         };
     }
     public static String one(int onesNumLength) {
@@ -94,7 +94,7 @@ public class Read_Number {
             case 3 -> "three";
             case 2 -> "two";
             case 1 -> "one";
-            default -> "false";
+            default -> "";
         };
     }
 }
