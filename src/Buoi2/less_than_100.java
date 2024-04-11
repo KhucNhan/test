@@ -6,8 +6,8 @@ public class less_than_100 {
         boolean check = true;
         String index = "";
 
-        while (num <= 100) {
-            for (int i = 2; i <= 3; i++) {
+        while (num < 100) {
+            for (int i = 2; i <= Math.sqrt(num); i++) {
                 if (num % i == 0) {
                     check = false;
                     break;
@@ -20,6 +20,6 @@ public class less_than_100 {
             check = true;
             num++;
         }
-        System.out.println("2, 3, " + index);
+        System.out.println(index);
     }
 }
