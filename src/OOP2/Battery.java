@@ -32,21 +32,26 @@ class Lamp {
     }
     public void getStatus() {
         System.out.println(this.status);
+        this.battery.decreaseEnergy();
     }
 
     public int getBatteryInfor() {
-        return battery.energy;
+        this.battery.decreaseEnergy();
+        return this.battery.energy;
     }
 
     public void light() {
-        if (this.status) {
+        if (this.status && this.battery.energy > 0) {
             System.out.println("Light on.");
+            this.battery.decreaseEnergy();
+        } else if (this.status && this.battery.energy < 0){
+            System.out.println("The lamp is run out of energy.");
         } else {
             System.out.println("Light off.");
         }
     }
     public static void main(String[] args) {
-        Battery pin1 = new Battery(100);
+        Battery pin1 = new Battery(0);
         Lamp den1 = new Lamp();
         den1.setBattery(pin1);
         System.out.println(den1.getBatteryInfor());
@@ -55,5 +60,4 @@ class Lamp {
         den1.light();
         System.out.println(den1.battery);
     }
-
 }
