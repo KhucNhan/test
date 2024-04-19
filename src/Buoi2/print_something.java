@@ -1,4 +1,5 @@
 package Buoi2;
+
 import java.util.Scanner;
 
 public class print_something {
@@ -63,15 +64,6 @@ public class print_something {
                     }
                     break;
                 case 6:
-//                    for (int i = 5; i >= 1; i--) {
-//                        for (int j = 1; j <= i; j++) {
-//                            System.out.print(" ");
-//                        }
-//                        for (int j = 5; j >= i; j--) {
-//                            System.out.print("* ");
-//                        }
-//                        System.out.println();
-//                    }
                     for (int i = 1; i <= 5; ++i) {
                         for (int space = 1; space <= 5 - i; ++space) {
                             System.out.print("  ");
