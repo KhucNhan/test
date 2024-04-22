@@ -2,7 +2,7 @@ package OOP2;
 public class Tom_And_Jerry {
     public static void main(String[] args) {
         Cat cat = new Cat("Tom", 4, 5);
-        Rat rat = new Rat("Jerry", 0.5, 4, true);
+        Rat rat = new Rat("Jerry", 0.5, 6, true);
         cat.sound();
         rat.sound();
         cat.name();
