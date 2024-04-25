@@ -4,34 +4,34 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class mobile {
+    private int battery;
+    private String composingMsg, name;
+    private List<String> inbox;
+    private List<String> outbox;
+    private boolean isOn;
+
+    public mobile(String name) {
+        this.battery = 100;
+        this.composingMsg = "";
+        this.inbox = new ArrayList<>();
+        this.outbox = new ArrayList<>();
+        this.isOn = false;
+        this.name = name;
+    }
+
     public static void main(String[] args) {
-        Mobile nokia = new Mobile();
-        Mobile iphone = new Mobile();
+        mobile nokia = new mobile("nokia");
+        mobile iphone = new mobile("iphone");
 
         nokia.turnOn();
         iphone.turnOn();
         String message = "Hello iPhone, this is Nokia!";
         String message2 = "Hello nokia, this is iphone!";
         nokia.sendMessage(iphone, message);
-        iphone.sendMessage(iphone, message2);
+        nokia.sendMessage(iphone, " ");
+        iphone.sendMessage(nokia, message2);
         iphone.viewInbox();
-    }
-}
-
-class Mobile {
-    private int battery;
-    private String composingMsg;
-    private List<String> inbox;
-    private List<String> outbox;
-    private boolean isOn;
-
-
-    public Mobile() {
-        this.battery = 100;
-        this.composingMsg = "";
-        this.inbox = new ArrayList<>();
-        this.outbox = new ArrayList<>();
-        this.isOn = false;
+        nokia.viewInbox();
     }
 
     public boolean isOn() {
@@ -65,15 +65,15 @@ class Mobile {
 
     public void receiveMessage(String message) {
         inbox.add(message);
-        System.out.println("A new message has been received.");
+        System.out.println(this.name + ": A new message has been received.");
         decreaseBattery();
     }
 
-    public void sendMessage(Mobile receiver, String message) {
+    public void sendMessage(mobile receiver, String message) {
         if (isOn && receiver.isOn) {
-            outbox.add(message);
+            this.outbox.add(message);
+            System.out.println(this.name + ": Message has been sent.");
             receiver.receiveMessage(message);
-            System.out.println("Message has been sent.");
             decreaseBattery();
         } else {
             System.out.println("Failed to send message.");
@@ -82,9 +82,9 @@ class Mobile {
 
     public void viewInbox() {
         if (inbox.isEmpty()) {
-            System.out.println("Inbox is empty.");
+            System.out.println(this.name + " inbox is empty.");
         } else {
-            System.out.println("Inbox:");
+            System.out.println(this.name + "'s inbox:");
             for (String message : inbox) {
                 System.out.println(message);
             }
@@ -94,9 +94,9 @@ class Mobile {
 
     public void viewOutbox() {
         if (outbox.isEmpty()) {
-            System.out.println("Outbox is empty.");
+            System.out.println(this.name + " outbox is empty.");
         } else {
-            System.out.println("Outbox:");
+            System.out.println(this.name + " outbox:");
             for (String message : outbox) {
                 System.out.println(message);
             }
