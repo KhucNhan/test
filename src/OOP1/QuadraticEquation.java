@@ -12,7 +12,7 @@ public class QuadraticEquation {
     }
 
     public void getDiscriminant() {
-        delta = Math.pow(b,2) - 4 * a * c;
+        delta = Math.pow(b,2) - (4 * a * c);
         System.out.println("Discriminant is: " + delta);
     }
 
@@ -22,7 +22,7 @@ public class QuadraticEquation {
     }
 
     public void getRoot2() {
-        root2 = (-b + Math.sqrt(delta)) / (2 * a);
+        root2 = (-b - Math.sqrt(delta)) / (2 * a);
         System.out.println(root2);
     }
 
@@ -32,11 +32,11 @@ public class QuadraticEquation {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter a: ");
+        System.out.print("Enter a: ");
         double x = scanner.nextDouble();
-        System.out.println("Enter b: ");
+        System.out.print("Enter b: ");
         double y = scanner.nextDouble();
-        System.out.println("Enter c: ");
+        System.out.print("Enter c: ");
         double z = scanner.nextDouble();
 
         QuadraticEquation math = new QuadraticEquation(x , y , z);
