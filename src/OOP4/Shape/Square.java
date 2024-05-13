@@ -1,4 +1,4 @@
-package OOP4;
+package OOP4.Shape;
 
 public class Square extends Rectangle {
     Square() {

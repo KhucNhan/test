@@ -1,6 +1,6 @@
-package OOP4;
+package OOP4.Shape;
 
-public class Rectangle extends Shape{
+public class Rectangle extends Shape {
     private static double width, length;
 
     Rectangle() {

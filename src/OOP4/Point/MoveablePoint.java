@@ -1,8 +1,8 @@
-package OOP4;
+package OOP4.Point;
 
 import java.util.Arrays;
 
-public class MoveablePoint extends Point{
+public class MoveablePoint extends Point {
     private float xSpeed, ySpeed;
 
     MoveablePoint() {

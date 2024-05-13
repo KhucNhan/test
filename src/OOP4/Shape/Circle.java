@@ -1,6 +1,6 @@
-package OOP4;
+package OOP4.Shape;
 
-public class Circle extends Shape{
+public class Circle extends Shape {
     private static double radius;
     Circle() {
         radius = 1;

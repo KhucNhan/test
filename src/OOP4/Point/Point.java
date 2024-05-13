@@ -1,4 +1,4 @@
-package OOP4;
+package OOP4.Point;
 
 import java.util.Arrays;
 
