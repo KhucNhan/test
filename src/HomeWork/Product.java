@@ -3,6 +3,9 @@ package HomeWork;
 public class Product {
     private String name;
     private int price, amount;
+    Product() {
+
+    }
 
     Product(String name, int price, int amount) {
         this.name = name;
