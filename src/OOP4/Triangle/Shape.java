@@ -1,7 +1,7 @@
 package OOP4.Triangle;
 
-public interface Shape {
-    public double getArea();
-    public double getPerimeter();
-    public String toString();
+public abstract class Shape {
+    public abstract double getArea();
+    public abstract double getPerimeter();
+    public abstract String toString();
 }

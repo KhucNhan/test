@@ -1,6 +1,6 @@
 package OOP4.Triangle;
 
-public class Triangle implements Shape {
+public class Triangle extends Shape {
     double side1, side2, side3;
     Triangle() {
         side1 = 1;
