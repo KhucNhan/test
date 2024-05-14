@@ -1,7 +1,7 @@
-package OOP1;
-public class temperature {
+package OOP1.temperature;
+public class Temperature {
     private double c;
-    temperature(double c) {
+    Temperature(double c) {
         this.c = c;
     }
 
@@ -19,12 +19,5 @@ public class temperature {
 
     public double CtoK() {
         return c * 274.15;
-    }
-    public static void main(String[] args) {
-        temperature c = new temperature(10);
-
-        System.out.println(c.CtoF());
-
-        System.out.println(c.CtoK());
     }
 }
