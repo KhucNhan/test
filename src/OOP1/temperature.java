@@ -1,22 +1,22 @@
 package OOP1;
 public class temperature {
-    double c;
+    private double c;
     temperature(double c) {
         this.c = c;
     }
 
-    public double toF() {
+    public double CtoF() {
         return c * 33.8;
     }
 
-    public double toK() {
+    public double CtoK() {
         return c * 274.15;
     }
     public static void main(String[] args) {
         temperature c = new temperature(10);
 
-        System.out.println(c.toF());
+        System.out.println(c.CtoF());
 
-        System.out.println(c.toK());
+        System.out.println(c.CtoK());
     }
 }
