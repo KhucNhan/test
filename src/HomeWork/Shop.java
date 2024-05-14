@@ -1,7 +1,11 @@
 package HomeWork;
 import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Shop {
     private ArrayList<Product> productList = new ArrayList<>(1000);
+
+    Scanner sc = new Scanner(System.in);
 
     Shop() {
 
@@ -42,6 +46,17 @@ public class Shop {
         for (Product i : productList) {
             System.out.println(i.getName());
         }
+    }
+
+    public void addNewProduct() {
+        Product a = new Product();
+        System.out.print("Name: ");
+        a.setName(sc.nextLine());
+        System.out.print("Price: ");
+        a.setPrice(sc.nextInt());
+        System.out.print("Amount: ");
+        a.setAmount(sc.nextInt());
+        productList.add(a);
     }
 
     public void sortPriceHighToLow() {

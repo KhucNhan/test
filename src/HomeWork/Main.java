@@ -22,7 +22,9 @@ public class Main {
 
         shop.deleteProduct(hat);
         shop.displayProductList();
+        shop.addNewProduct();
 
         System.out.println("Total: " + shop.totalProductPrice());
+
     }
 }
