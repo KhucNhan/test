@@ -1,8 +1,14 @@
 package HomeWork;
 
+import com.sun.source.tree.BreakTree;
+
+import java.util.Scanner;
+
 public class Product {
     private String name;
     private int price, amount;
+    Scanner sc = new Scanner(System.in);
+
     Product() {
 
     }
@@ -35,5 +41,20 @@ public class Product {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public void setAll() {
+        System.out.print("Name: ");
+        this.name = sc.nextLine();
+        System.out.print("Price: ");
+        this.price = sc.nextInt();
+        System.out.print("Amount: ");
+        this.amount = sc.nextInt();
+    }
+
+    public String toString() {
+        return "Name: " + name +
+                "  ||  Price: " + price +
+                "  ||  Amount: " + amount;
     }
 }

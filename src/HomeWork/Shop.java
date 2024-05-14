@@ -44,18 +44,14 @@ public class Shop {
 
     public void displayProductList() {
         for (Product i : productList) {
-            System.out.println(i.getName());
+            System.out.println(i.toString());
         }
     }
 
     public void addNewProduct() {
         Product a = new Product();
-        System.out.print("Name: ");
-        a.setName(sc.nextLine());
-        System.out.print("Price: ");
-        a.setPrice(sc.nextInt());
-        System.out.print("Amount: ");
-        a.setAmount(sc.nextInt());
+        System.out.println("Creat new product:");
+        a.setAll();
         productList.add(a);
     }
 
