@@ -13,10 +13,10 @@ public class temperature {
         return c * 274.15;
     }
     public static void main(String[] args) {
-        temperature num = new temperature(10);
+        temperature c = new temperature(10);
 
-        System.out.println(num.toF());
+        System.out.println(c.toF());
 
-        System.out.println(num.toK());
+        System.out.println(c.toK());
     }
 }
