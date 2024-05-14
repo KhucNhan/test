@@ -1,27 +1,22 @@
 package OOP1;
-
-import java.util.Scanner;
-
 public class temperature {
-    int num;
-    temperature(int num) {
-        this.num = num;
+    double c;
+    temperature(double c) {
+        this.c = c;
     }
 
-    public void toF() {
-        System.out.println("Fahrenheit: " + (num * 33.8));
+    public double toF() {
+        return c * 33.8;
     }
 
-    public void toK() {
-        System.out.println("Kelvin: " + num * 274.15);
+    public double toK() {
+        return c * 274.15;
     }
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter C:");
-        int number = scanner.nextInt();
-        temperature num = new temperature(number);
+        temperature num = new temperature(10);
 
-        num.toF();
-        num.toK();
+        System.out.println(num.toF());
+
+        System.out.println(num.toK());
     }
 }
