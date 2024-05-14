@@ -1,5 +1,6 @@
 package HomeWork;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Shop {
@@ -13,6 +14,10 @@ public class Shop {
 
     Shop(ArrayList<Product> productList) {
         this.productList = productList;
+    }
+
+    public void deleteProduct(String name) {
+        productList.removeIf(i -> compare(i.getName(), name));
     }
 
     public void deleteProduct(Product product) {
@@ -53,6 +58,10 @@ public class Shop {
         System.out.println("Creat new product:");
         a.setAll();
         productList.add(a);
+    }
+
+    public boolean compare(String product,String name) {
+        return  ((product.toLowerCase()).equals(name.toLowerCase()));
     }
 
     public void sortPriceHighToLow() {
