@@ -5,6 +5,14 @@ public class temperature {
         this.c = c;
     }
 
+    public double getC() {
+        return c;
+    }
+
+    public void setC(double c) {
+        this.c = c;
+    }
+
     public double CtoF() {
         return c * 33.8;
     }
