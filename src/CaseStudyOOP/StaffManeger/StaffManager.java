@@ -32,14 +32,14 @@ public class StaffManager {
     public String searchStaff(String name) {
         for (Staff i : staffList) {
             if (compare(i, name)) {
-                return "Result of searching for " + "\"" +name + "\"" + " is: " + i;
+                return "Result of searching for " + "\"" + name + "\"" + " is: " + i;
             }
         }
         return "Can not find this staff.";
     }
 
     public boolean compare(Staff staff, String name) {
-       return (staff.getName()).equalsIgnoreCase(name);
+        return (staff.getName()).equalsIgnoreCase(name);
     }
 
     public void showAllStaff() {

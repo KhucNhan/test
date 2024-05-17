@@ -12,7 +12,7 @@ public class Ticket {
         ID_Fly = idFly;
     }
 
-    public Ticket(String idFly, int day, int month, int year, String from, String to , int price) {
+    public Ticket(String idFly, int day, int month, int year, String from, String to, int price) {
         ID_Fly = idFly;
         this.day = day;
         this.month = month;

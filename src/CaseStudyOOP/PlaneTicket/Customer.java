@@ -12,10 +12,11 @@ public class Customer extends People {
     }
 
     Customer(String name, int age, boolean gender) {
-        super(name,age,gender);
+        super(name, age, gender);
     }
-    Customer(Ticket ticket, int amount , String name, int age, boolean gender) {
-        super(name,age,gender);
+
+    Customer(Ticket ticket, int amount, String name, int age, boolean gender) {
+        super(name, age, gender);
         this.ticket = ticket;
         this.amount = amount;
     }
@@ -53,7 +54,7 @@ public class Customer extends People {
         }
         return check;
     }
-    
+
     public void sortPriceHighToLow() {
         for (int i = 0; i < ticketList.size() - 1; i++) {
             if (ticketList.get(i).getPrice() < ticketList.get(i + 1).getPrice()) {

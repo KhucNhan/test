@@ -6,7 +6,7 @@ public class Main {
         Worker khanh = new Worker("Khanh", 18, "Ha Noi", 0);
         Worker sam = new Worker("Sam", 18, "Dien Bien", 0);
         Worker dung = new Worker("Dung", 18, "Ha Noi", 0);
-        Engineer enormous = new Engineer("Enormous" , 24, "US", "Professor");
+        Engineer enormous = new Engineer("Enormous", 24, "US", "Professor");
 
         admin.addStaff(khanh);
         admin.addStaff(sam);
