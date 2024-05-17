@@ -1,4 +1,4 @@
-package CaseStudyOOP.Staff;
+package CaseStudyOOP.StaffManeger;
 
 public class Staff {
     private String name, address;

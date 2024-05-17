@@ -1,4 +1,4 @@
-package CaseStudyOOP.Staff;
+package CaseStudyOOP.StaffManeger;
 
 public class Worker extends Staff {
     private String role = "Worker";

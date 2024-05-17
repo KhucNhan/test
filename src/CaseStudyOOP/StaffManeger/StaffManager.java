@@ -1,7 +1,6 @@
-package CaseStudyOOP.Staff;
+package CaseStudyOOP.StaffManeger;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class StaffManager {
     ArrayList<Staff> staffList = new ArrayList<>(1000);

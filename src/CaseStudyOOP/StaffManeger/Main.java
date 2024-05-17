@@ -1,4 +1,4 @@
-package CaseStudyOOP.Staff;
+package CaseStudyOOP.StaffManeger;
 
 public class Main {
     public static void main(String[] args) {
