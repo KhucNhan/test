@@ -14,7 +14,10 @@ public class Main {
         admin.addStaff(enormous);
 
         System.out.println(admin.searchStaff("sam"));
+
         admin.firedStaff(khanh);
+        admin.firedStaff("dung");
+
         admin.showAllStaff();
     }
 }

@@ -26,6 +26,10 @@ public class StaffManager {
         staffList.remove(staff);
     }
 
+    public void firedStaff(String name) {
+        staffList.removeIf(i -> compare(i, name));
+    }
+
     public String searchStaff(String name) {
         for (Staff i : staffList) {
             if (compare(i, name)) {
