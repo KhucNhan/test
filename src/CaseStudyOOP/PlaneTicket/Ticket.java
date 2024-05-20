@@ -6,6 +6,8 @@ public class Ticket {
     private int price, day, month, year;
     private String ID_Fly, from, to;
 
+    private boolean status = true;
+
     Scanner sc = new Scanner(System.in);
 
     public Ticket(String idFly) {
@@ -20,6 +22,15 @@ public class Ticket {
         this.price = price;
         this.from = from;
         this.to = to;
+    }
+
+
+    public boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public int getPrice() {

@@ -22,10 +22,13 @@ public class Customer extends People {
     }
 
     public void buyTicket(Ticket ticket) {
-        if (checkTicket(ticket)) {
+        if (checkTicket(ticket) && ticket.getStatus()) {
             System.out.println("You already buy this ticket.");
-        } else {
+        } else if (ticket.getStatus() && !checkTicket(ticket)){
             ticketList.add(ticket);
+            ticket.setStatus(false);
+        } else {
+            System.out.println("Sorry " + this.name + ", this ticket has been bought.");
         }
     }
 
