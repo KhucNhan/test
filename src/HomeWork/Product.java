@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class Product {
     private String name;
-    private int price, amount;
-    Scanner sc = new Scanner(System.in);
+    private int price;
+    private int amount;
 
     Product() {
 
@@ -43,13 +43,10 @@ public class Product {
         this.amount = amount;
     }
 
-    public void setAll() {
-        System.out.print("Name: ");
-        this.name = sc.nextLine();
-        System.out.print("Price: ");
-        this.price = sc.nextInt();
-        System.out.print("Amount: ");
-        this.amount = sc.nextInt();
+    public void setAll(String name, int price, int amount) {
+        setName(name);
+        setPrice(price);
+        setAmount(amount);
     }
 
     public String toString() {

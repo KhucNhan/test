@@ -1,29 +1,28 @@
 package CaseStudyOOP.StaffManeger;
 
 public class Worker extends Staff {
-    private String role = "Worker";
     private int experience;
 
     Worker() {
         super();
+        this.setRole("Worker");
     }
 
     Worker(int experience) {
         super();
         this.experience = experience;
+        this.setRole("Worker");
     }
 
     Worker(String name, int age, String address) {
         super(name, age, address);
+        this.setRole("Worker");
     }
 
     Worker(String name, int age, String address, int experience) {
         super(name, age, address);
         this.experience = experience;
-    }
-
-    public String getRole() {
-        return role;
+        this.setRole("Worker");
     }
 
     public int getExperience() {

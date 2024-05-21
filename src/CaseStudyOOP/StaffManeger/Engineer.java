@@ -1,29 +1,28 @@
 package CaseStudyOOP.StaffManeger;
 
 public class Engineer extends Staff {
-    private String role = "Engineer";
     private String certificate;
 
     Engineer() {
         super();
+        setRole("Engineer");
     }
 
     Engineer(String certificate) {
         super();
         this.certificate = certificate;
+        setRole("Engineer");
     }
 
     Engineer(String name, int age, String address) {
         super(name, age, address);
+        setRole("Engineer");
     }
 
     Engineer(String name, int age, String address, String certificate) {
         super(name, age, address);
         this.certificate = certificate;
-    }
-
-    public String getRole() {
-        return role;
+        setRole("Engineer");
     }
 
     public String getCertificate() {

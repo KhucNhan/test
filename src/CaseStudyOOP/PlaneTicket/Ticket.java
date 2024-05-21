@@ -5,10 +5,7 @@ import java.util.Scanner;
 public class Ticket {
     private int price, day, month, year;
     private String ID_Fly, from, to;
-
     private boolean status = true;
-
-    Scanner sc = new Scanner(System.in);
 
     public Ticket(String idFly) {
         ID_Fly = idFly;
@@ -89,10 +86,10 @@ public class Ticket {
         this.to = to;
     }
 
-    public void setDate() {
-        setDay(sc.nextInt());
-        setMonth(sc.nextInt());
-        setYear(sc.nextInt());
+    public void setDate(int day, int month, int year) {
+        setDay(day);
+        setMonth(month);
+        setYear(year);
     }
 
     public String getDate() {

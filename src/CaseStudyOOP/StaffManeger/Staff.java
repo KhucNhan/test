@@ -1,7 +1,9 @@
 package CaseStudyOOP.StaffManeger;
 
 public class Staff {
-    private String name, address;
+    private String name;
+    private String address;
+    private String role;
     private int age;
 
     Staff() {
@@ -12,6 +14,14 @@ public class Staff {
         this.name = name;
         this.age = age;
         this.address = address;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getName() {

@@ -18,6 +18,6 @@ public class Main {
         admin.firedStaff(khanh);
         admin.firedStaff("dung");
 
-        admin.showAllStaff();
+        System.out.println(admin.getStaffList());
     }
 }

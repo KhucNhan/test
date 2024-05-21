@@ -20,7 +20,7 @@ public class Main {
         shop.deleteProduct("hat");
         shop.displayProductList();
 
-        shop.addNewProduct();
+        shop.addNewProduct("coach",25,100);
 
         shop.deleteProduct(jacket);
         shop.deleteProduct("SHIRT");

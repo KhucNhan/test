@@ -6,8 +6,6 @@ import java.util.Scanner;
 public class Shop {
     private ArrayList<Product> productList = new ArrayList<>(1000);
 
-    Scanner sc = new Scanner(System.in);
-
     Shop() {
 
     }
@@ -53,10 +51,9 @@ public class Shop {
         }
     }
 
-    public void addNewProduct() {
+    public void addNewProduct(String name, int price, int amount) {
         Product a = new Product();
-        System.out.println("Creat new product:");
-        a.setAll();
+        a.setAll(name, price, amount);
         productList.add(a);
     }
 

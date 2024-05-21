@@ -3,8 +3,7 @@ package CaseStudyOOP.PlaneTicket;
 import java.util.ArrayList;
 
 public class Customer extends People {
-    private ArrayList<Ticket> ticketList = new ArrayList<>(1000);
-    private Ticket ticket;
+    private ArrayList<Ticket> ticketList = new ArrayList<>();
     private int amount;
 
     Customer() {
@@ -15,21 +14,23 @@ public class Customer extends People {
         super(name, age, gender);
     }
 
-    Customer(Ticket ticket, int amount, String name, int age, boolean gender) {
+    Customer(int amount, String name, int age, boolean gender) {
         super(name, age, gender);
-        this.ticket = ticket;
         this.amount = amount;
     }
 
-    public void buyTicket(Ticket ticket) {
-        if (checkTicket(ticket) && ticket.getStatus()) {
-            System.out.println("You already buy this ticket.");
-        } else if (ticket.getStatus() && !checkTicket(ticket)){
-            ticketList.add(ticket);
-            ticket.setStatus(false);
-        } else {
-            System.out.println("Sorry " + this.name + ", this ticket has been bought.");
+    public boolean buyTicket(Ticket ticket) {
+        if(!ticket.getStatus()){
+            return false;
         }
+
+        if (!checkTicket(ticket)) {
+            return false;
+        }
+
+        ticketList.add(ticket);
+        ticket.setStatus(false);
+        return true;
     }
 
     public String getTicketInfo(Ticket ticket) {
