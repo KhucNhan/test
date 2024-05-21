@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Shop {
-    //    final int MAX_LIMITED = 1000;
     private Product[] products = new Product[0];
 
     Shop() {
@@ -18,9 +17,9 @@ public class Shop {
     public boolean deleteProduct(String name) {
         Product[] a = new Product[products.length - 1];
         int k = 0;
-        for (int i = 0; i < products.length; i++) {
-            if (!compare(products[i].getName(), name)) {
-                a[k] = products[i];
+        for (Product product : products) {
+            if (!compare(product.getName(), name)) {
+                a[k] = product;
                 k++;
             }
         }
@@ -32,9 +31,9 @@ public class Shop {
     public boolean deleteProduct(Product product) {
         Product[] a = new Product[products.length - 1];
         int k = 0;
-        for (int i = 0; i < products.length; i++) {
-            if (products[i] != product) {
-                a[k] = products[i];
+        for (Product value : products) {
+            if (value != product) {
+                a[k] = value;
                 k++;
             }
         }
@@ -72,8 +71,8 @@ public class Shop {
     }
 
     public void getProducts() {
-        for (int i = 0; i < products.length; i++) {
-            System.out.println(products[i].toString());
+        for (Product product : products) {
+            System.out.println(product.toString());
         }
     }
 
@@ -88,8 +87,8 @@ public class Shop {
     }
 
     public boolean haveProduct(Product product) {
-        for (int i = 0; i < products.length; i++) {
-            if (products[i] == product) {
+        for (Product value : products) {
+            if (value == product) {
                 return true;
             }
         }
@@ -98,8 +97,8 @@ public class Shop {
     }
 
     public boolean haveProduct(String name) {
-        for (int i = 0; i < products.length; i++) {
-            if (Objects.equals(products[i].getName(), name)) {
+        for (Product product : products) {
+            if (Objects.equals(product.getName(), name)) {
                 return true;
             }
         }
