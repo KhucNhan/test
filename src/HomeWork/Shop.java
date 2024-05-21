@@ -1,69 +1,118 @@
 package HomeWork;
-import java.util.ArrayList;
+
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Shop {
-    private ArrayList<Product> productList = new ArrayList<>(1000);
+    //    final int MAX_LIMITED = 1000;
+    private Product[] products = new Product[0];
 
     Shop() {
 
     }
 
-    Shop(ArrayList<Product> productList) {
-        this.productList = productList;
+    Shop(Product[] products) {
+        this.products = products;
     }
 
-    public void deleteProduct(String name) {
-        productList.removeIf(i -> compare(i.getName(), name));
+    public boolean deleteProduct(String name) {
+        Product[] a = new Product[products.length - 1];
+        int k = 0;
+        for (int i = 0; i < products.length; i++) {
+            if (!compare(products[i].getName(), name)) {
+                a[k] = products[i];
+                k++;
+            }
+        }
+        products = Arrays.copyOf(a, a.length);
+
+        return !haveProduct(name);
     }
 
-    public void deleteProduct(Product product) {
-        productList.remove(product);
+    public boolean deleteProduct(Product product) {
+        Product[] a = new Product[products.length - 1];
+        int k = 0;
+        for (int i = 0; i < products.length; i++) {
+            if (products[i] != product) {
+                a[k] = products[i];
+                k++;
+            }
+        }
+        products = Arrays.copyOf(a, a.length);
+
+        return !haveProduct(product);
     }
 
     public int productPrice(Product product) {
-        int x = 0;
-        for (Product i : productList) {
+        for (Product i : products) {
             if (i.getName().equals(product.getName())) {
-                x = i.getPrice();
-                break;
+                return i.getPrice();
             }
         }
-        return x;
+
+        throw new RuntimeException("Not found");
     }
 
     public int totalProductPrice() {
         int total = 0;
-        for (Product i : productList) {
+        for (Product i : products) {
             total += i.getPrice() * i.getAmount();
         }
         return total;
     }
 
-    public void addProduct(Product product) {
-        productList.add(product);
+    public boolean addProduct(Product product) {
+        if (haveProduct(product)) {
+            return false;
+        }
+
+        products = Arrays.copyOf(products, products.length + 1);
+        products[products.length - 1] = product;
+        return true;
     }
 
-    public void displayProductList() {
-        for (Product i : productList) {
-            System.out.println(i.toString());
+    public void getProducts() {
+        for (int i = 0; i < products.length; i++) {
+            System.out.println(products[i].toString());
         }
     }
 
     public void addNewProduct(String name, int price, int amount) {
         Product a = new Product();
         a.setAll(name, price, amount);
-        productList.add(a);
+        addProduct(a);
     }
 
-    public boolean compare(String product,String name) {
-        return  ((product.toLowerCase()).equals(name.toLowerCase()));
+    public boolean compare(String product, String name) {
+        return ((product.toLowerCase()).equals(name.toLowerCase()));
+    }
+
+    public boolean haveProduct(Product product) {
+        for (int i = 0; i < products.length; i++) {
+            if (products[i] == product) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public boolean haveProduct(String name) {
+        for (int i = 0; i < products.length; i++) {
+            if (Objects.equals(products[i].getName(), name)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public void sortPriceHighToLow() {
-        for (int i = 0; i < productList.size() - 1; i++) {
-            if (productList.get(i).getPrice() < productList.get(i + 1).getPrice()) {
-                Product x = productList.get(i);
-                productList.set(i, productList.get(i + 1));
-                productList.set(i + 1, x);
+        for (int i = 0; i < products.length - 1; i++) {
+            if (products[i].getPrice() < products[i + 1].getPrice()) {
+                Product x = products[i];
+                products[i] = products[i + 1];
+                products[i + 1] = x;
                 i = -1;
             }
         }

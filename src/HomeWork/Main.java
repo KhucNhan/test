@@ -13,18 +13,18 @@ public class Main {
         shop.addProduct(shirt);
         shop.addProduct(new Product("hat", 5, 100));
 
-        shop.displayProductList();
+        shop.getProducts();
 
         shop.sortPriceHighToLow();
 
-        shop.deleteProduct("hat");
-        shop.displayProductList();
+        System.out.println(shop.deleteProduct("hat"));
+        shop.getProducts();
 
         shop.addNewProduct("coach",25,100);
 
         shop.deleteProduct(jacket);
         shop.deleteProduct("SHIRT");
 
-        shop.displayProductList();
+        shop.getProducts();
     }
 }
