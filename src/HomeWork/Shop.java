@@ -37,6 +37,7 @@ public class Shop {
                 k++;
             }
         }
+
         products = Arrays.copyOf(a, a.length);
 
         return !haveProduct(product);

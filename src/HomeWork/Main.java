@@ -17,7 +17,7 @@ public class Main {
 
         shop.sortPriceHighToLow();
 
-        System.out.println(shop.deleteProduct("hat"));
+        shop.deleteProduct("hat");
         shop.getProducts();
 
         shop.addNewProduct("coach",25,100);
