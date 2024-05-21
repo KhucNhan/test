@@ -1,18 +1,20 @@
 package CaseStudyOOP.PlaneTicket;
-
-import java.util.Scanner;
-
 public class Ticket {
-    private int price, day, month, year;
-    private String ID_Fly, from, to;
+    private int price;
+    private int day;
+    private int month;
+    private int year;
+    private String FlyID;
+    private String from;
+    private String to;
     private boolean status = true;
 
     public Ticket(String idFly) {
-        ID_Fly = idFly;
+        FlyID = idFly;
     }
 
     public Ticket(String idFly, int day, int month, int year, String from, String to, int price) {
-        ID_Fly = idFly;
+        FlyID = idFly;
         this.day = day;
         this.month = month;
         this.year = year;
@@ -62,12 +64,12 @@ public class Ticket {
         this.year = year;
     }
 
-    public String getID_Fly() {
-        return ID_Fly;
+    public String getFlyID() {
+        return FlyID;
     }
 
-    public void setID_Fly(String ID_Fly) {
-        this.ID_Fly = ID_Fly;
+    public void setFlyID(String FlyID) {
+        this.FlyID = FlyID;
     }
 
     public String getFrom() {
@@ -105,7 +107,7 @@ public class Ticket {
     }
 
     public String toString() {
-        return "Ticket ID: " + getID_Fly()
+        return "Ticket ID: " + getFlyID()
                 + "  ||  From: " + getFrom()
                 + " - To: " + getTo()
                 + "  ||  Date: " + getDate()

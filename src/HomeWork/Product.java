@@ -1,9 +1,4 @@
 package HomeWork;
-
-import com.sun.source.tree.BreakTree;
-
-import java.util.Scanner;
-
 public class Product {
     private String name;
     private int price;
