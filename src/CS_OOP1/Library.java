@@ -80,7 +80,7 @@ public class Library {
 
     public boolean setEbooks(Ebook ebook, String bookID, String author, String title, String genre, String release_year, int size, String format) {
         if (checkExcistEbook(ebook)) {
-            ebook.setEbook(bookID,author,title,genre,release_year,size,format);
+            ebook.setEbook(bookID, author, title, genre, release_year, size, format);
             return true;
         }
         return false;
@@ -88,7 +88,7 @@ public class Library {
 
     public boolean setEbooks(String bookID, String author, String title, String genre, String release_year, int size, String format) {
         if (checkExcistEbook(bookID)) {
-            findEbook(bookID).setEbook(bookID,author,title,genre,release_year,size,format);
+            findEbook(bookID).setEbook(bookID, author, title, genre, release_year, size, format);
             return true;
         }
         return false;
@@ -103,34 +103,34 @@ public class Library {
     public Ebook[] findEbook(String findBy, String word) {
         Ebook[] searchList = new Ebook[0];
         int countSearchList = 0;
-            switch (findBy.toLowerCase()) {
-                case "title":
-                    for (int i = 0; i < count; i++) {
-                        if (Ebooks[i].getTitle().equalsIgnoreCase(word)) {
-                            searchList = Arrays.copyOf(searchList, countSearchList + 1);
-                            searchList[countSearchList++] = Ebooks[i];
-                        }
+        switch (findBy.toLowerCase()) {
+            case "title":
+                for (int i = 0; i < count; i++) {
+                    if (Ebooks[i].getTitle().equalsIgnoreCase(word)) {
+                        searchList = Arrays.copyOf(searchList, countSearchList + 1);
+                        searchList[countSearchList++] = Ebooks[i];
                     }
-                    break;
-                case "author":
-                    for (int i = 0; i < count; i++) {
-                        if (Ebooks[i].getAuthor().equalsIgnoreCase(word)) {
-                            searchList = Arrays.copyOf(searchList, countSearchList + 1);
-                            searchList[countSearchList++] = Ebooks[i];
-                        }
+                }
+                break;
+            case "author":
+                for (int i = 0; i < count; i++) {
+                    if (Ebooks[i].getAuthor().equalsIgnoreCase(word)) {
+                        searchList = Arrays.copyOf(searchList, countSearchList + 1);
+                        searchList[countSearchList++] = Ebooks[i];
                     }
-                    break;
-                case "release year":
-                    for (int i = 0; i < count; i++) {
-                        if (Ebooks[i].getRelease_year().equalsIgnoreCase(word)) {
-                            searchList = Arrays.copyOf(searchList, countSearchList + 1);
-                            searchList[countSearchList++] = Ebooks[i];
-                        }
+                }
+                break;
+            case "release year":
+                for (int i = 0; i < count; i++) {
+                    if (Ebooks[i].getRelease_year().equalsIgnoreCase(word)) {
+                        searchList = Arrays.copyOf(searchList, countSearchList + 1);
+                        searchList[countSearchList++] = Ebooks[i];
                     }
-                    break;
-                default:
-                    throw new RuntimeException("Not found.");
-            }
+                }
+                break;
+            default:
+                throw new RuntimeException("Not found.");
+        }
 
         return searchList;
     }
