@@ -78,18 +78,20 @@ public class Library {
         count--;
     }
 
-    public void setEbooks(Ebook ebook, String bookID, String author, String title, String genre, String release_year, int size, String format) {
+    public boolean setEbooks(Ebook ebook, String bookID, String author, String title, String genre, String release_year, int size, String format) {
         if (checkExcistEbook(ebook)) {
-            throw new RuntimeException("Not found Ebook.");
+            ebook.setEbook(bookID,author,title,genre,release_year,size,format);
+            return true;
         }
-        ebook.setEbook(bookID,author,title,genre,release_year,size,format);
+        return false;
     }
 
-    public void setEbooks(String bookID, String author, String title, String genre, String release_year, int size, String format) {
+    public boolean setEbooks(String bookID, String author, String title, String genre, String release_year, int size, String format) {
         if (checkExcistEbook(bookID)) {
-            throw new RuntimeException("Not found Ebook.");
+            findEbook(bookID).setEbook(bookID,author,title,genre,release_year,size,format);
+            return true;
         }
-        findEbook(bookID).setEbook(bookID,author,title,genre,release_year,size,format);
+        return false;
     }
 
     public void displayAllBook() {
