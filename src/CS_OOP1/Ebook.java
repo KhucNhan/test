@@ -34,7 +34,7 @@ public class Ebook extends Book {
         this.format = format;
     }
 
-    public void setEbook(String bookID, String author, String title, String genre, String release_year, int size, String format) {
+    public void setEbook(String bookID, String author, String title, String genre, String release_year, double size, String format) {
         setBookID(bookID);
         setAuthor(author);
         setGenre(genre);
