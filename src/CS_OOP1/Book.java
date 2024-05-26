@@ -43,8 +43,8 @@ public class Book {
         this.author = author;
     }
 
-    public String getRelease_year() {
-        return release_year;
+    public int getRelease_year() {
+        return Integer.parseInt(release_year);
     }
 
     public void setRelease_year(String release_year) {

@@ -13,16 +13,8 @@ public class Main {
         admin.add(b1);
         admin.add(b3);
 
-//        System.out.println(Arrays.toString(admin.findEbook("release year", "2000")));
+        System.out.println(Arrays.toString(admin.searchEbook(new EbookSearchByTitle(), "Doraemon")));
+        System.out.println(Arrays.toString(admin.searchEbook(new EbookSearchByAuthor(), "khuc chi nhan")));
 
-//        System.out.println(Arrays.toString(admin.findEbook("title", "harry potter 1")));
-
-        System.out.println(Arrays.toString(admin.findEbook("author", "hehe")));
-
-//        System.out.println(Arrays.toString(admin.findEbook("title", "harry potter 2")));
-
-//        admin.remove("D101");
-//        admin.remove(b2);
-//        admin.displayAllBook();
     }
 }
