@@ -7,6 +7,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Library admin = new Library();
+        admin.add(new Ebook("01","Doraemon","Fujiko","2000","Animation","123 MB","pdf"));
+        admin.add(new Ebook("02","Harry Potter","Khuc Chi Nhan","1995","Fantasy","1 GB","pdf"));
+        admin.add(new Ebook("03","One Piece","Khuc Chi Nhan","1999","Animation","456 MB","pdf"));
         do {
             System.out.println("---------------------------------------");
             System.out.println("1. Add new ebook to library.");
