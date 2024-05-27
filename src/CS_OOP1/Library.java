@@ -2,18 +2,15 @@ package CS_OOP1;
 
 import java.util.Arrays;
 import java.util.Objects;
-
 public class Library {
     final int MAX_LIMITE = 1000;
     private int count = 0;
     private Ebook[] Ebooks = new Ebook[MAX_LIMITE];
 
-
     public boolean add(Ebook ebook) {
         if (isExist(ebook)) {
             return false;
         }
-
         Ebooks[count++] = ebook;
         return true;
     }
@@ -38,7 +35,6 @@ public class Library {
                 return Ebooks[i];
             }
         }
-
         return null;
     }
 
@@ -62,14 +58,6 @@ public class Library {
             Ebooks[i] = Ebooks[i + 1];
         }
         count--;
-        return true;
-    }
-
-    public boolean setEbook(String id, String author, String title, String genre, String release_year, String size, String format) {
-        if (findEbook(id) == null) {
-            return false;
-        }
-        findEbook(id).setEbook(id, author, title, genre, release_year, size, format);
         return true;
     }
 
