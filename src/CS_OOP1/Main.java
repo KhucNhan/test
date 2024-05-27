@@ -135,16 +135,22 @@ public class Main {
                     int f_number = new Scanner(System.in).nextInt();
                     switch (f_number) {
                         case 1:
-                            System.out.println("Enter title:");
-                            System.out.println(Arrays.toString(admin.searchEbook(new EbookSearchByTitle(), new Scanner(System.in).nextLine())));
+                            System.out.print("Enter title: ");
+                            for (Ebook e : admin.searchEbook(new EbookSearchByTitle(), new Scanner(System.in).nextLine())) {
+                                System.out.println(e);
+                            }
                             break;
                         case 2:
-                            System.out.println("Enter author:");
-                            System.out.println(Arrays.toString(admin.searchEbook(new EbookSearchByAuthor(), new Scanner(System.in).nextLine())));
+                            System.out.print("Enter author: ");
+                            for (Ebook e : admin.searchEbook(new EbookSearchByAuthor(), new Scanner(System.in).nextLine())) {
+                                System.out.println(e);
+                            }
                             break;
                         case 3:
-                            System.out.println("Enter release year:");
-                            System.out.println(Arrays.toString(admin.searchEbook(new EbookSearchByReleaseYear(), new Scanner(System.in).next())));
+                            System.out.print("Enter release year: ");
+                            for (Ebook e : admin.searchEbook(new EbookSearchByReleaseYear(), new Scanner(System.in).nextLine())) {
+                                System.out.println(e);
+                            }
                             break;
                         case 4:
                             break;
