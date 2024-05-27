@@ -40,10 +40,18 @@ public class Main {
                     admin.add(new Ebook(EbookID, title, author, release_year, genre, size, format));
                     break;
                 case 2:
+                    if (admin.isEmpty()) {
+                        System.out.println("The library is empty.");
+                        break;
+                    }
                     System.out.print("Enter book id to delete: ");
                     admin.remove(new Scanner(System.in).next());
                     break;
                 case 3:
+                    if (admin.isEmpty()) {
+                        System.out.println("The library is empty.");
+                        break;
+                    }
                     System.out.print("Enter ebook id you want to update information: ");
                     String u_EbookID = new Scanner(System.in).next();
                     if (admin.findEbook(u_EbookID) != null) {
@@ -107,9 +115,15 @@ public class Main {
                             case 9:
                                 break;
                         }
+                    } else {
+                        System.out.println("Your ebook id didn't match any id.");
                     }
                     break;
                 case 4:
+                    if (admin.isEmpty()) {
+                        System.out.println("The library is empty.");
+                        break;
+                    }
                     System.out.println("You want to find ebook by what?");
                     System.out.println("1. Title.");
                     System.out.println("2. Author.");
