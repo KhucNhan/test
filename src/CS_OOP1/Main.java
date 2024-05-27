@@ -20,6 +20,10 @@ public class Main {
                 case 1:
                     System.out.print("Book ID: ");
                     String EbookID = new Scanner(System.in).nextLine();
+                    while (admin.checkExistEbook(EbookID)) {
+                        System.out.println("This id have been existed.");
+                        EbookID = new Scanner(System.in).nextLine();
+                    }
                     System.out.print("Title: ");
                     String title = new Scanner(System.in).nextLine();
                     System.out.print("Author: ");
@@ -29,7 +33,7 @@ public class Main {
                     System.out.print("Genre: ");
                     String genre = new Scanner(System.in).nextLine();
                     System.out.print("Size: ");
-                    double size = new Scanner(System.in).nextDouble();
+                    String size = new Scanner(System.in).nextLine();
                     System.out.print("Format: ");
                     String format = new Scanner(System.in).next();
 
@@ -77,7 +81,7 @@ public class Main {
                                 break;
                             case 6:
                                 System.out.println("Enter new size: ");
-                                admin.findEbook(u_EbookID).setSize(new Scanner(System.in).nextDouble());
+                                admin.findEbook(u_EbookID).setSize(new Scanner(System.in).nextLine());
                                 break;
                             case 7:
                                 System.out.println("Enter new format: ");
@@ -95,7 +99,7 @@ public class Main {
                                 System.out.println("Enter new genre: ");
                                 String u_new_genre = new Scanner(System.in).nextLine();
                                 System.out.println("Enter new size: ");
-                                double u_new_size = new Scanner(System.in).nextDouble();
+                                String u_new_size = new Scanner(System.in).nextLine();
                                 System.out.println("Enter new format: ");
                                 String u_new_format = new Scanner(System.in).next();
                                 admin.findEbook(u_EbookID).setEbook(u_new_id, u_new_title, u_new_author, u_new_ry, u_new_genre, u_new_size, u_new_format);
@@ -130,6 +134,10 @@ public class Main {
                     }
                     break;
                 case 5:
+                    if (admin.isEmpty()) {
+                        System.out.println("The library is empty.");
+                        break;
+                    }
                     admin.displayAllBook();
                     break;
                 case 6:

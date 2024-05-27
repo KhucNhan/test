@@ -67,7 +67,7 @@ public class Library {
         return true;
     }
 
-    public boolean setEbook(String bookID, String author, String title, String genre, String release_year, int size, String format) {
+    public boolean setEbook(String bookID, String author, String title, String genre, String release_year, String size, String format) {
         if (checkExistEbook(bookID)) {
             findEbook(bookID).setEbook(bookID, author, title, genre, release_year, size, format);
             return true;
@@ -79,6 +79,10 @@ public class Library {
         for (int i = 0; i < count; i++) {
             System.out.println(Ebooks[i]);
         }
+    }
+
+    public boolean isEmpty() {
+        return count == 0;
     }
 
     public Ebook[] searchEbook(EbookSearch ebookSearch, String text) {

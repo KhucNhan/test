@@ -1,28 +1,28 @@
 package CS_OOP1;
 
 public class Ebook extends Book {
-    private double size;
+    private String size;
     private String format;
 
     public Ebook() {
     }
 
-    public Ebook(double size, String format) {
+    public Ebook(String size, String format) {
         this.size = size;
         this.format = format;
     }
 
-    public Ebook(String bookID, String title, String author, String release_year, String genre, double size, String format) {
+    public Ebook(String bookID, String title, String author, String release_year, String genre, String size, String format) {
         super(bookID, title, author, release_year, genre);
         this.size = size;
         this.format = format;
     }
 
-    public double getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(double size) {
+    public void setSize(String size) {
         this.size = size;
     }
 
@@ -34,7 +34,7 @@ public class Ebook extends Book {
         this.format = format;
     }
 
-    public void setEbook(String bookID, String author, String title, String genre, String release_year, double size, String format) {
+    public void setEbook(String bookID, String author, String title, String genre, String release_year, String size, String format) {
         setBookID(bookID);
         setAuthor(author);
         setGenre(genre);
