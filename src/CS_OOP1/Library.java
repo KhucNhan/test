@@ -25,16 +25,16 @@ public class Library {
         return false;
     }
 
-    public boolean isExist(String bookID) {
+    public boolean isExist(String id) {
         for (int i = 0; i < count; i++) {
-            return Objects.equals(Ebooks[i].getBookID(), bookID);
+            return Objects.equals(Ebooks[i].getId(), id);
         }
         return false;
     }
 
     public Ebook findEbook(String text) {
         for (int i = 0; i < count; i++) {
-            if (((Ebooks[i].getBookID()).equalsIgnoreCase((text)) || (Ebooks[i].getTitle().equalsIgnoreCase(text)))) {
+            if (((Ebooks[i].getId()).equalsIgnoreCase((text)) || (Ebooks[i].getTitle().equalsIgnoreCase(text)))) {
                 return Ebooks[i];
             }
         }
@@ -42,18 +42,16 @@ public class Library {
         return null;
     }
 
-    public boolean remove(String bookID) {
-        if (!isExist(bookID)) {
-            return false;
-        }
-
+    public boolean remove(String id) {
         for (int i = 0; i < count; i++) {
-            if (Objects.equals((Ebooks[i].getBookID()).toLowerCase(), bookID.toLowerCase())) {
+            if (Objects.equals((Ebooks[i].getId()).toLowerCase(), id.toLowerCase())) {
                 remove(i);
                 break;
+            } else {
+                return false;
             }
         }
-        return !isExist(bookID);
+        return true;
     }
 
     private boolean remove(int index) {
@@ -67,18 +65,12 @@ public class Library {
         return true;
     }
 
-    public boolean setEbook(String bookID, String author, String title, String genre, String release_year, String size, String format) {
-        if (isExist(bookID)) {
-            findEbook(bookID).setEbook(bookID, author, title, genre, release_year, size, format);
-            return true;
+    public boolean setEbook(String id, String author, String title, String genre, String release_year, String size, String format) {
+        if (findEbook(id) == null) {
+            return false;
         }
-        return false;
-    }
-
-    public void display() {
-        for (int i = 0; i < count; i++) {
-            System.out.println(Ebooks[i]);
-        }
+        findEbook(id).setEbook(id, author, title, genre, release_year, size, format);
+        return true;
     }
 
     public boolean isEmpty() {
@@ -89,7 +81,7 @@ public class Library {
         Ebook[] searchList = new Ebook[0];
         int countSearchList = 0;
         for (int i = 0; i < count; i++) {
-            if (ebookSearch.compare(Ebooks[i],text) == 0) {
+            if (ebookSearch.search(Ebooks[i], text) == 0) {
                 searchList = Arrays.copyOf(searchList, countSearchList + 1);
                 searchList[countSearchList++] = Ebooks[i];
             }
@@ -97,10 +89,18 @@ public class Library {
         return searchList;
     }
 
+    public Ebook[] display() {
+        return Ebooks;
+    }
+
+    public int getBookAmount() {
+        return count;
+    }
+
     public void sort(EbookSort ebookSort) {
         for (int i = 0; i < count; i++) {
             for (int j = i + 1; j < count; j++) {
-                if (ebookSort.compare(Ebooks[i],Ebooks[j]) > 0) {
+                if (ebookSort.sort(Ebooks[i], Ebooks[j]) > 0) {
                     Ebook temp = Ebooks[i];
                     Ebooks[i] = Ebooks[j];
                     Ebooks[j] = temp;

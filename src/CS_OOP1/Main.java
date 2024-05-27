@@ -72,7 +72,7 @@ public class Main {
                         switch (updateNumber) {
                             case 1:
                                 System.out.println("Enter new id: ");
-                                admin.findEbook(updateEbookId).setBookID(new Scanner(System.in).nextLine());
+                                admin.findEbook(updateEbookId).setId(new Scanner(System.in).nextLine());
                                 break;
                             case 2:
                                 System.out.println("Enter new title: ");
@@ -186,7 +186,9 @@ public class Main {
                         System.out.println("The library is empty.");
                         break;
                     }
-                    admin.display();
+                    for (int i = 0; i < admin.getBookAmount(); i++) {
+                        System.out.println((admin.display())[i]);
+                    }
                     break;
                 case 7:
                     return;

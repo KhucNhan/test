@@ -1,7 +1,7 @@
 package CS_OOP1;
 
 public class Book {
-    private String bookID;
+    private String id;
     private String title;
     private String author;
     private String release_year;
@@ -11,20 +11,20 @@ public class Book {
 
     }
 
-    public Book(String bookID, String title, String author, String release_year, String genre) {
-        this.bookID = bookID;
+    public Book(String id, String title, String author, String release_year, String genre) {
+        this.id = id;
         this.title = title;
         this.author = author;
         this.release_year = release_year;
         this.genre = genre;
     }
 
-    public String getBookID() {
-        return bookID;
+    public String getId() {
+        return id;
     }
 
-    public void setBookID(String bookID) {
-        this.bookID = bookID;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -60,7 +60,7 @@ public class Book {
     }
 
     public String toString() {
-        return "ID: " + getBookID()
+        return "ID: " + getId()
                 + "  ||  Author: " + getAuthor()
                 + "  ||  Title: " + getTitle()
                 + "  ||  Genre: " + getGenre()

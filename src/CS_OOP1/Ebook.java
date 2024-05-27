@@ -12,8 +12,8 @@ public class Ebook extends Book {
         this.format = format;
     }
 
-    public Ebook(String bookID, String title, String author, String release_year, String genre, String size, String format) {
-        super(bookID, title, author, release_year, genre);
+    public Ebook(String id, String title, String author, String release_year, String genre, String size, String format) {
+        super(id, title, author, release_year, genre);
         this.size = size;
         this.format = format;
     }
@@ -34,8 +34,8 @@ public class Ebook extends Book {
         this.format = format;
     }
 
-    public void setEbook(String bookID, String author, String title, String genre, String release_year, String size, String format) {
-        setBookID(bookID);
+    public void setEbook(String id, String author, String title, String genre, String release_year, String size, String format) {
+        setId(id);
         setAuthor(author);
         setGenre(genre);
         setRelease_year(release_year);
@@ -44,7 +44,7 @@ public class Ebook extends Book {
     }
 
     public String toString() {
-        return "ID: " + getBookID()
+        return "ID: " + getId()
                 + "  ||  Author: " + getAuthor()
                 + "  ||  Title: " + getTitle()
                 + "  ||  Genre: " + getGenre()
