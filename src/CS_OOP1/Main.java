@@ -2,7 +2,6 @@ package CS_OOP1;
 
 import java.util.Scanner;
 
-
 public class Main {
     public static void main(String[] args) {
         Library admin = new Library();
@@ -39,7 +38,6 @@ public class Main {
                     String size = new Scanner(System.in).nextLine();
                     System.out.print("Format: ");
                     String format = new Scanner(System.in).next();
-
                     admin.add(new Ebook(eBookId, title, author, releaseYear, genre, size, format));
                     break;
                 case 2:
