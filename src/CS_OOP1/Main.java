@@ -67,8 +67,8 @@ public class Main {
                         System.out.print("7. Format  ");
                         System.out.println("8. All.");
                         System.out.println("9. Cancel.");
-                        int u_number = new Scanner(System.in).nextInt();
-                        switch (u_number) {
+                        int updateNumber = new Scanner(System.in).nextInt();
+                        switch (updateNumber) {
                             case 1:
                                 System.out.println("Enter new id: ");
                                 admin.findEbook(updateEbookId).setBookID(new Scanner(System.in).nextLine());
@@ -131,23 +131,23 @@ public class Main {
                     System.out.println("2. Author.");
                     System.out.println("3. Release year.");
                     System.out.println("4. Cancel.");
-                    int f_number = new Scanner(System.in).nextInt();
-                    switch (f_number) {
+                    int findNumber = new Scanner(System.in).nextInt();
+                    switch (findNumber) {
                         case 1:
                             System.out.print("Enter title: ");
-                            for (Ebook e : admin.searchEbook(new EbookSearchByTitle(), new Scanner(System.in).nextLine())) {
+                            for (Ebook e : admin.searchEbooks(new EbookSearchByTitle(), new Scanner(System.in).nextLine())) {
                                 System.out.println(e);
                             }
                             break;
                         case 2:
                             System.out.print("Enter author: ");
-                            for (Ebook e : admin.searchEbook(new EbookSearchByAuthor(), new Scanner(System.in).nextLine())) {
+                            for (Ebook e : admin.searchEbooks(new EbookSearchByAuthor(), new Scanner(System.in).nextLine())) {
                                 System.out.println(e);
                             }
                             break;
                         case 3:
                             System.out.print("Enter release year: ");
-                            for (Ebook e : admin.searchEbook(new EbookSearchByReleaseYear(), new Scanner(System.in).nextLine())) {
+                            for (Ebook e : admin.searchEbooks(new EbookSearchByReleaseYear(), new Scanner(System.in).nextLine())) {
                                 System.out.println(e);
                             }
                             break;
@@ -160,7 +160,7 @@ public class Main {
                         System.out.println("The library is empty.");
                         break;
                     }
-                    admin.displayAllBook();
+                    admin.display();
                     break;
                 case 6:
                     return;

@@ -75,7 +75,7 @@ public class Library {
         return false;
     }
 
-    public void displayAllBook() {
+    public void display() {
         for (int i = 0; i < count; i++) {
             System.out.println(Ebooks[i]);
         }
@@ -85,7 +85,7 @@ public class Library {
         return count == 0;
     }
 
-    public Ebook[] searchEbook(EbookSearch ebookSearch, String text) {
+    public Ebook[] searchEbooks(EbookSearch ebookSearch, String text) {
         Ebook[] searchList = new Ebook[0];
         int countSearchList = 0;
         for (int i = 0; i < count; i++) {
