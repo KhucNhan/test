@@ -96,4 +96,16 @@ public class Library {
         }
         return searchList;
     }
+
+    public void sort(EbookSort ebookSort) {
+        for (int i = 0; i < count; i++) {
+            for (int j = i + 1; j < count; j++) {
+                if (ebookSort.compare(Ebooks[i],Ebooks[j]) > 0) {
+                    Ebook temp = Ebooks[i];
+                    Ebooks[i] = Ebooks[j];
+                    Ebooks[j] = temp;
+                }
+            }
+        }
+    }
 }

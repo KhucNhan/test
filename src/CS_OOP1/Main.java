@@ -6,17 +6,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Library admin = new Library();
-        admin.add(new Ebook("01","Doraemon","Fujiko","2000","Animation","123 MB","pdf"));
-        admin.add(new Ebook("02","Harry Potter","Khuc Chi Nhan","1995","Fantasy","1 GB","pdf"));
-        admin.add(new Ebook("03","One Piece","Khuc Chi Nhan","1999","Animation","456 MB","pdf"));
+        admin.add(new Ebook("01","a","m","2000","Animation","123 MB","pdf"));
+        admin.add(new Ebook("02","b","m","1995","Fantasy","1 GB","pdf"));
+        admin.add(new Ebook("03","c","n","1999","Animation","456 MB","pdf"));
         do {
             System.out.println("---------------------------------------");
             System.out.println("1. Add new ebook to library.");
             System.out.println("2. Delete ebook from library.");
             System.out.println("3. Update ebook information.");
             System.out.println("4. Search ebook.");
-            System.out.println("5. Show all ebook in library.");
-            System.out.println("6. Exit.");
+            System.out.println("5. Sort ebook.");
+            System.out.println("6. Show all ebook in library.");
+            System.out.println("7. Exit.");
             int number = new Scanner(System.in).nextInt();
             switch (number) {
                 case 1:
@@ -160,9 +161,34 @@ public class Main {
                         System.out.println("The library is empty.");
                         break;
                     }
-                    admin.display();
+                    System.out.println("You want to sort ebook by what?");
+                    System.out.println("1. Title.");
+                    System.out.println("2. Author.");
+                    System.out.println("3. Release year.");
+                    System.out.println("4. Cancel.");
+                    int sortNumber = new Scanner(System.in).nextInt();
+                    switch (sortNumber) {
+                        case 1:
+                            admin.sort(new EbookSortByTitle());
+                            break;
+                        case 2:
+                            admin.sort(new EbookSortByAuthor());
+                            break;
+                        case 3:
+                            admin.sort(new EbookSortByReleaseYear());
+                            break;
+                        case 4:
+                            break;
+                    }
                     break;
                 case 6:
+                    if (admin.isEmpty()) {
+                        System.out.println("The library is empty.");
+                        break;
+                    }
+                    admin.display();
+                    break;
+                case 7:
                     return;
             }
         } while (true);
