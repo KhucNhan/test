@@ -21,17 +21,17 @@ public class Main {
             switch (number) {
                 case 1:
                     System.out.print("Book ID: ");
-                    String EbookID = new Scanner(System.in).nextLine();
-                    while (admin.checkExistEbook(EbookID)) {
+                    String eBookId = new Scanner(System.in).nextLine();
+                    while (admin.checkExistEbook(eBookId)) {
                         System.out.println("This id have been existed.");
-                        EbookID = new Scanner(System.in).nextLine();
+                        eBookId = new Scanner(System.in).nextLine();
                     }
                     System.out.print("Title: ");
                     String title = new Scanner(System.in).nextLine();
                     System.out.print("Author: ");
                     String author = new Scanner(System.in).nextLine();
                     System.out.print("Release year: ");
-                    String release_year = new Scanner(System.in).nextLine();
+                    String releaseYear = new Scanner(System.in).nextLine();
                     System.out.print("Genre: ");
                     String genre = new Scanner(System.in).nextLine();
                     System.out.print("Size: ");
@@ -39,7 +39,7 @@ public class Main {
                     System.out.print("Format: ");
                     String format = new Scanner(System.in).next();
 
-                    admin.add(new Ebook(EbookID, title, author, release_year, genre, size, format));
+                    admin.add(new Ebook(eBookId, title, author, releaseYear, genre, size, format));
                     break;
                 case 2:
                     if (admin.isEmpty()) {
@@ -55,8 +55,8 @@ public class Main {
                         break;
                     }
                     System.out.print("Enter ebook id you want to update information: ");
-                    String u_EbookID = new Scanner(System.in).next();
-                    if (admin.findEbook(u_EbookID) != null) {
+                    String updateEbookId = new Scanner(System.in).next();
+                    if (admin.findEbook(updateEbookId) != null) {
                         System.out.println("What information do you want to update?");
                         System.out.print("1. ID  ");
                         System.out.print("2. Title  ");
@@ -71,48 +71,48 @@ public class Main {
                         switch (u_number) {
                             case 1:
                                 System.out.println("Enter new id: ");
-                                admin.findEbook(u_EbookID).setBookID(new Scanner(System.in).nextLine());
+                                admin.findEbook(updateEbookId).setBookID(new Scanner(System.in).nextLine());
                                 break;
                             case 2:
                                 System.out.println("Enter new title: ");
-                                admin.findEbook(u_EbookID).setTitle(new Scanner(System.in).nextLine());
+                                admin.findEbook(updateEbookId).setTitle(new Scanner(System.in).nextLine());
                                 break;
                             case 3:
                                 System.out.println("Enter new author: ");
-                                admin.findEbook(u_EbookID).setAuthor(new Scanner(System.in).nextLine());
+                                admin.findEbook(updateEbookId).setAuthor(new Scanner(System.in).nextLine());
                                 break;
                             case 4:
                                 System.out.println("Enter new release year: ");
-                                admin.findEbook(u_EbookID).setRelease_year(new Scanner(System.in).next());
+                                admin.findEbook(updateEbookId).setRelease_year(new Scanner(System.in).next());
                                 break;
                             case 5:
                                 System.out.println("Enter new genre: ");
-                                admin.findEbook(u_EbookID).setTitle(new Scanner(System.in).nextLine());
+                                admin.findEbook(updateEbookId).setTitle(new Scanner(System.in).nextLine());
                                 break;
                             case 6:
                                 System.out.println("Enter new size: ");
-                                admin.findEbook(u_EbookID).setSize(new Scanner(System.in).nextLine());
+                                admin.findEbook(updateEbookId).setSize(new Scanner(System.in).nextLine());
                                 break;
                             case 7:
                                 System.out.println("Enter new format: ");
-                                admin.findEbook(u_EbookID).setTitle(new Scanner(System.in).next());
+                                admin.findEbook(updateEbookId).setTitle(new Scanner(System.in).next());
                                 break;
                             case 8:
                                 System.out.println("Enter new id: ");
-                                String u_new_id = new Scanner(System.in).nextLine();
+                                String updateNewId = new Scanner(System.in).nextLine();
                                 System.out.println("Enter new title: ");
-                                String u_new_title = new Scanner(System.in).nextLine();
+                                String updateNewTitle = new Scanner(System.in).nextLine();
                                 System.out.println("Enter new author: ");
-                                String u_new_author = new Scanner(System.in).nextLine();
+                                String updateNewAuthor = new Scanner(System.in).nextLine();
                                 System.out.println("Enter new release year: ");
-                                String u_new_ry = new Scanner(System.in).next();
+                                String updateNewReleaseYear = new Scanner(System.in).next();
                                 System.out.println("Enter new genre: ");
-                                String u_new_genre = new Scanner(System.in).nextLine();
+                                String updateNewGenre = new Scanner(System.in).nextLine();
                                 System.out.println("Enter new size: ");
-                                String u_new_size = new Scanner(System.in).nextLine();
+                                String updateNewSize = new Scanner(System.in).nextLine();
                                 System.out.println("Enter new format: ");
-                                String u_new_format = new Scanner(System.in).next();
-                                admin.findEbook(u_EbookID).setEbook(u_new_id, u_new_title, u_new_author, u_new_ry, u_new_genre, u_new_size, u_new_format);
+                                String updateNewFormat = new Scanner(System.in).next();
+                                admin.findEbook(updateEbookId).setEbook(updateNewId, updateNewTitle, updateNewAuthor, updateNewReleaseYear, updateNewGenre, updateNewSize, updateNewFormat);
                                 break;
                             case 9:
                                 break;
