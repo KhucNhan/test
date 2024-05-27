@@ -22,7 +22,7 @@ public class Main {
                 case 1:
                     System.out.print("Book ID: ");
                     String eBookId = new Scanner(System.in).nextLine();
-                    while (admin.checkExistEbook(eBookId)) {
+                    while (admin.isExist(eBookId)) {
                         System.out.println("This id have been existed.");
                         eBookId = new Scanner(System.in).nextLine();
                     }

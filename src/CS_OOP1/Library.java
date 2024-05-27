@@ -10,7 +10,7 @@ public class Library {
 
 
     public boolean add(Ebook ebook) {
-        if (checkExistEbook(ebook)) {
+        if (isExist(ebook)) {
             return false;
         }
 
@@ -18,14 +18,14 @@ public class Library {
         return true;
     }
 
-    public boolean checkExistEbook(Ebook ebook) {
+    public boolean isExist(Ebook ebook) {
         for (int i = 0; i < count; i++) {
             return Ebooks[i] == ebook;
         }
         return false;
     }
 
-    public boolean checkExistEbook(String bookID) {
+    public boolean isExist(String bookID) {
         for (int i = 0; i < count; i++) {
             return Objects.equals(Ebooks[i].getBookID(), bookID);
         }
@@ -43,7 +43,7 @@ public class Library {
     }
 
     public boolean remove(String bookID) {
-        if (!checkExistEbook(bookID)) {
+        if (!isExist(bookID)) {
             return false;
         }
 
@@ -53,7 +53,7 @@ public class Library {
                 break;
             }
         }
-        return !checkExistEbook(bookID);
+        return !isExist(bookID);
     }
 
     private boolean remove(int index) {
@@ -68,7 +68,7 @@ public class Library {
     }
 
     public boolean setEbook(String bookID, String author, String title, String genre, String release_year, String size, String format) {
-        if (checkExistEbook(bookID)) {
+        if (isExist(bookID)) {
             findEbook(bookID).setEbook(bookID, author, title, genre, release_year, size, format);
             return true;
         }
