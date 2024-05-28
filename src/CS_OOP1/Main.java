@@ -21,7 +21,6 @@ public class Main {
                     adminConsole.sort();
                     break;
                 case 6:
-                    if (adminConsole.isEmpty()) break;
                     adminConsole.display();
                     break;
                 case 7:

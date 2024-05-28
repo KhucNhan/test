@@ -166,6 +166,7 @@ public class LibraryConsole {
     }
 
     public void display() {
+        if (isEmpty()) return;
         for (int i = 0; i < admin.getBookAmount(); i++) {
             System.out.println((admin.display())[i]);
         }
