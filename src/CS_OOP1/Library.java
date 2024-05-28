@@ -29,7 +29,7 @@ public class Library {
         return false;
     }
 
-    public Ebook findEbook(String text) {
+    public Ebook getEbook(String text) {
         for (int i = 0; i < count; i++) {
             if (((Ebooks[i].getId()).equalsIgnoreCase((text)) || (Ebooks[i].getTitle().equalsIgnoreCase(text)))) {
                 return Ebooks[i];

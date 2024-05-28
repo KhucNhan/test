@@ -55,7 +55,7 @@ public class Main {
                     }
                     System.out.print("Enter ebook id you want to update information: ");
                     String updateEbookId = new Scanner(System.in).next();
-                    if (admin.findEbook(updateEbookId) != null) {
+                    if (admin.getEbook(updateEbookId) != null) {
                         System.out.println("What information do you want to update?");
                         System.out.print("1. ID  ");
                         System.out.print("2. Title  ");
@@ -70,31 +70,31 @@ public class Main {
                         switch (updateNumber) {
                             case 1:
                                 System.out.println("Enter new id: ");
-                                admin.findEbook(updateEbookId).setId(new Scanner(System.in).nextLine());
+                                admin.getEbook(updateEbookId).setId(new Scanner(System.in).nextLine());
                                 break;
                             case 2:
                                 System.out.println("Enter new title: ");
-                                admin.findEbook(updateEbookId).setTitle(new Scanner(System.in).nextLine());
+                                admin.getEbook(updateEbookId).setTitle(new Scanner(System.in).nextLine());
                                 break;
                             case 3:
                                 System.out.println("Enter new author: ");
-                                admin.findEbook(updateEbookId).setAuthor(new Scanner(System.in).nextLine());
+                                admin.getEbook(updateEbookId).setAuthor(new Scanner(System.in).nextLine());
                                 break;
                             case 4:
                                 System.out.println("Enter new release year: ");
-                                admin.findEbook(updateEbookId).setRelease_year(new Scanner(System.in).next());
+                                admin.getEbook(updateEbookId).setRelease_year(new Scanner(System.in).next());
                                 break;
                             case 5:
                                 System.out.println("Enter new genre: ");
-                                admin.findEbook(updateEbookId).setTitle(new Scanner(System.in).nextLine());
+                                admin.getEbook(updateEbookId).setTitle(new Scanner(System.in).nextLine());
                                 break;
                             case 6:
                                 System.out.println("Enter new size: ");
-                                admin.findEbook(updateEbookId).setSize(new Scanner(System.in).nextLine());
+                                admin.getEbook(updateEbookId).setSize(new Scanner(System.in).nextLine());
                                 break;
                             case 7:
                                 System.out.println("Enter new format: ");
-                                admin.findEbook(updateEbookId).setTitle(new Scanner(System.in).next());
+                                admin.getEbook(updateEbookId).setTitle(new Scanner(System.in).next());
                                 break;
                             case 8:
                                 System.out.println("Enter new id: ");
@@ -111,7 +111,7 @@ public class Main {
                                 String updateNewSize = new Scanner(System.in).nextLine();
                                 System.out.println("Enter new format: ");
                                 String updateNewFormat = new Scanner(System.in).next();
-                                admin.findEbook(updateEbookId).setEbook(updateNewId, updateNewTitle, updateNewAuthor, updateNewReleaseYear, updateNewGenre, updateNewSize, updateNewFormat);
+                                admin.getEbook(updateEbookId).setEbook(updateNewId, updateNewTitle, updateNewAuthor, updateNewReleaseYear, updateNewGenre, updateNewSize, updateNewFormat);
                                 break;
                             case 9:
                                 break;
