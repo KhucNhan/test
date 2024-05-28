@@ -176,7 +176,6 @@ public class LibraryConsole {
         if (isEmpty()) return;
         String id = enterId();
         if (admin.getEbook(id) != null) {
-            updateMenu();
             int choiceUpdate = updateMenu();
             switch (choiceUpdate) {
                 case 1:
