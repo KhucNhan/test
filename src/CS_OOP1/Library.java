@@ -3,9 +3,9 @@ package CS_OOP1;
 import java.util.Arrays;
 import java.util.Objects;
 public class Library {
-    final int MAX_LIMITE = 1000;
+    final int MAX_LIMIT = 1000;
     private int count = 0;
-    private Ebook[] Ebooks = new Ebook[MAX_LIMITE];
+    private Ebook[] Ebooks = new Ebook[MAX_LIMIT];
 
     public boolean add(Ebook ebook) {
         if (isExist(ebook)) {
