@@ -91,7 +91,7 @@ public class LibraryConsole {
 
     public void setReleaseYear(String id) {
         System.out.println("Enter new id: ");
-        admin.getEbook(id).setRelease_year(new Scanner(System.in).nextLine());
+        admin.getEbook(id).setReleaseYear(new Scanner(System.in).nextLine());
     }
 
     public void setGenre(String id) {

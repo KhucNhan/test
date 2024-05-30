@@ -12,8 +12,8 @@ public class Ebook extends Book {
         this.format = format;
     }
 
-    public Ebook(String id, String title, String author, String release_year, String genre, String size, String format) {
-        super(id, title, author, release_year, genre);
+    public Ebook(String id, String title, String author, String releaseYear, String genre, String size, String format) {
+        super(id, title, author, releaseYear, genre);
         this.size = size;
         this.format = format;
     }
@@ -34,11 +34,11 @@ public class Ebook extends Book {
         this.format = format;
     }
 
-    public void setEbook(String id, String author, String title, String genre, String release_year, String size, String format) {
+    public void setEbook(String id, String author, String title, String genre, String releaseYear, String size, String format) {
         setId(id);
         setAuthor(author);
         setGenre(genre);
-        setRelease_year(release_year);
+        setReleaseYear(releaseYear);
         setSize(size);
         setFormat(format);
     }
@@ -48,7 +48,7 @@ public class Ebook extends Book {
                 + "  ||  Author: " + getAuthor()
                 + "  ||  Title: " + getTitle()
                 + "  ||  Genre: " + getGenre()
-                + "  ||  Release year: " + getRelease_year()
+                + "  ||  Release year: " + getReleaseYear()
                 + "  ||  File size: " + getSize()
                 + "  ||  File format: " + getFormat();
     }

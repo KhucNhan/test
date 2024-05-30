@@ -4,18 +4,18 @@ public class Book {
     private String id;
     private String title;
     private String author;
-    private String release_year;
+    private String releaseYear;
     private String genre;
 
     public Book() {
 
     }
 
-    public Book(String id, String title, String author, String release_year, String genre) {
+    public Book(String id, String title, String author, String releaseYear, String genre) {
         this.id = id;
         this.title = title;
         this.author = author;
-        this.release_year = release_year;
+        this.releaseYear = releaseYear;
         this.genre = genre;
     }
 
@@ -43,12 +43,12 @@ public class Book {
         this.author = author;
     }
 
-    public int getRelease_year() {
-        return Integer.parseInt(release_year);
+    public int getReleaseYear() {
+        return Integer.parseInt(releaseYear);
     }
 
-    public void setRelease_year(String release_year) {
-        this.release_year = release_year;
+    public void setReleaseYear(String releaseYear) {
+        this.releaseYear = releaseYear;
     }
 
     public String getGenre() {
@@ -64,6 +64,6 @@ public class Book {
                 + "  ||  Author: " + getAuthor()
                 + "  ||  Title: " + getTitle()
                 + "  ||  Genre: " + getGenre()
-                + "  ||  Release year: " + getRelease_year();
+                + "  ||  Release year: " + getReleaseYear();
     }
 }
