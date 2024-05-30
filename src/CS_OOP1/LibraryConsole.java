@@ -29,6 +29,7 @@ public class LibraryConsole {
         String eBookId = new Scanner(System.in).nextLine();
         while (admin.isExist(eBookId)) {
             System.out.println("This id have been existed.");
+            System.out.print("Enter id again: ");
             eBookId = new Scanner(System.in).nextLine();
         }
         System.out.print("Title: ");
@@ -131,7 +132,8 @@ public class LibraryConsole {
         System.out.println("1. Title.");
         System.out.println("2. Author.");
         System.out.println("3. Release year.");
-        System.out.println("4. Cancel.");
+        System.out.println("4. Id.");
+        System.out.println("5. Cancel.");
         return new Scanner(System.in).nextInt();
     }
 
@@ -156,12 +158,20 @@ public class LibraryConsole {
         }
     }
 
+    public void searchById() {
+        System.out.print("Enter Id: ");
+        for (Ebook e : admin.searchEbooks(new EbookSearchById(), new Scanner(System.in).nextLine())) {
+            System.out.println(e);
+        }
+    }
+
     public int sortMenu() {
         System.out.println("You want to sort ebook by what?");
         System.out.println("1. Title.");
         System.out.println("2. Author.");
         System.out.println("3. Release year.");
-        System.out.println("4. Cancel.");
+        System.out.println("4. Id.");
+        System.out.println("5. Cancel.");
         return new Scanner(System.in).nextInt();
     }
 
@@ -224,6 +234,9 @@ public class LibraryConsole {
                 searchByReleaseYear();
                 break;
             case 4:
+                searchById();
+                break;
+            case 5:
                 break;
         }
     }
@@ -242,6 +255,9 @@ public class LibraryConsole {
                 admin.sort(new EbookSortByReleaseYear());
                 break;
             case 4:
+                admin.sort(new EbookSortById());
+                break;
+            case 5:
                 break;
         }
     }
