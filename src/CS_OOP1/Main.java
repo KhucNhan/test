@@ -1,6 +1,9 @@
 package CS_OOP1;
+
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         LibraryConsole adminConsole = new LibraryConsole();
         while (true) {
             int choice = adminConsole.menu();

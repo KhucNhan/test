@@ -1,5 +1,7 @@
 package CS_OOP1;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class LibraryConsole {
@@ -22,9 +24,15 @@ public class LibraryConsole {
         if (isEmpty()) return;
         System.out.print("Enter book id to delete: ");
         admin.remove(new Scanner(System.in).next());
+        try {
+            FileWriter fw = new FileWriter("C:\\Dell\\testfile.txt");
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+
     }
 
-    public void add() {
+    public void add() throws IOException {
         System.out.print("Book ID: ");
         String eBookId = new Scanner(System.in).nextLine();
         while (admin.isExist(eBookId)) {

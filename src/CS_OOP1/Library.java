@@ -1,17 +1,27 @@
 package CS_OOP1;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Objects;
+
 public class Library {
     final int MAX_LIMIT = 1000;
     private int count = 0;
     private Ebook[] Ebooks = new Ebook[MAX_LIMIT];
 
-    public boolean add(Ebook ebook) {
+    public boolean add(Ebook ebook) throws IOException {
         if (isExist(ebook)) {
             return false;
         }
         Ebooks[count++] = ebook;
+//        try {
+            FileWriter fw = new FileWriter("C:\\Dell\\testfile.txt" , true);
+            fw.append(ebook.toString() + "\n");
+            fw.close();
+//        } catch (IOException e) {
+//            System.out.println(e);
+//        }
         return true;
     }
 
@@ -42,6 +52,13 @@ public class Library {
         for (int i = 0; i < count; i++) {
             if (Objects.equals((Ebooks[i].getId()).toLowerCase(), id.toLowerCase())) {
                 remove(i);
+//                try {
+//                    FileWriter fw = new FileWriter("C:\\Dell\\testfile.txt" , true);
+//                    fw.append(ebook.toString() + "\n");
+//                    fw.close();
+//                } catch (IOException e) {
+//                    System.out.println(e);
+//                }
                 break;
             } else {
                 return false;
