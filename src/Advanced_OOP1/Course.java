@@ -15,6 +15,22 @@ public class Course {
         return isExist(a);
     }
 
+    public int getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(int courseCode) {
+        this.courseCode = courseCode;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
     public void display() {
         if (students[0] == null) System.out.println("The list is empty.");
         for (int a = 0; a < i; a++) {
