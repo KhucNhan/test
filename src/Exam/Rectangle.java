@@ -88,7 +88,7 @@ public class Rectangle {
     }
 
     public String render() {
-        return "Rectangle: X: " + getX() +
+        return "demoRectangle.Rectangle: X: " + getX() +
                 ", Y: " + getY() +
                 ", Width: " + getWidth() +
                 ", Height: " + getHeight() +

@@ -44,7 +44,7 @@ public class Rectangle extends Shape {
     }
 
     public String toString() {
-        return "A Rectangle with width="
+        return "A demoRectangle.Rectangle with width="
                 + getWidth()
                 + " and length="
                 + getLength()
