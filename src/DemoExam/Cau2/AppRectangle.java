@@ -14,7 +14,7 @@ public class AppRectangle {
         crud.addRectangle(rect2);
         crud.addRectangle(rect3);
 
-        String filename = "rectangles.dat";
+        String filename = "Rectangles.dat";
         crud.addRectangleToFile(rect1, filename);
         crud.addRectangleToFile(rect2, filename);
         crud.addRectangleToFile(rect3, filename);
@@ -24,7 +24,7 @@ public class AppRectangle {
         Rectangle rectFromFile = crud.getRectangleFromFile(rect2.getShapeName() + ".dat");
         System.out.println(rectFromFile);
 
-//        crud.addRectangleListToFile(new Rectangle[]{rect1, rect2, rect3}, filename);
+        crud.addRectangleListToFile(new Rectangle[]{rect1, rect2, rect3}, filename);
 
         System.out.println();
         System.out.println("Danh sách tất cả hình chữ nhật từ file:");

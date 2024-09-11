@@ -42,7 +42,6 @@ public class CRUDRectangle {
     }
 
     public boolean addRectangleListToFile(Rectangle[] listRectangle, String filename) {
-        filename = "Rectangles.dat";
         try (FileOutputStream fos = new FileOutputStream(filename);
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
             for (Rectangle rect : listRectangle) {

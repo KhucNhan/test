@@ -3,7 +3,10 @@ package DemoExam.Cau1;
 public abstract class Shape {
     private String shapeName;
     private String color;
-    public Shape() {}
+
+    public Shape() {
+    }
+
     public Shape(String shapeName, String color) {
         this.shapeName = shapeName;
         this.color = color;
